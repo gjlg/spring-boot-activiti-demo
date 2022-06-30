@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/processdef">
-  <process id="evection" name="evection" isExecutable="true">
+  <process id="applyEvection" name="出差申请单" isExecutable="true">
     <startEvent id="sid-49a82fbe-5299-4698-9030-a20e59e9f074"/>
-    <userTask id="sid-fe58ea50-065d-44f9-98dc-ec74acc0a0ff" name="创建出差申请单"/>
+    <userTask id="sid-fe58ea50-065d-44f9-98dc-ec74acc0a0ff" name="创建出差申请单" activiti:assignee="yun_kai"/>
     <sequenceFlow id="sid-016a6d7c-e429-44f9-a73a-26c4d82200ea" sourceRef="sid-49a82fbe-5299-4698-9030-a20e59e9f074" targetRef="sid-fe58ea50-065d-44f9-98dc-ec74acc0a0ff"/>
-    <userTask id="sid-db33405e-455c-438f-9703-cb9f6f7e7de0" name="部门经理审批"/>
+    <userTask id="sid-db33405e-455c-438f-9703-cb9f6f7e7de0" name="部门经理审批" activiti:assignee="jerry"/>
     <sequenceFlow id="sid-c66ff264-fadb-4739-9961-e2ddbeb6652d" sourceRef="sid-fe58ea50-065d-44f9-98dc-ec74acc0a0ff" targetRef="sid-db33405e-455c-438f-9703-cb9f6f7e7de0"/>
-    <userTask id="sid-819c1d08-2bd9-4179-b5d0-7794f53d6a9b" name="总经理审批"/>
+    <userTask id="sid-819c1d08-2bd9-4179-b5d0-7794f53d6a9b" name="总经理审批" activiti:assignee="jack"/>
     <sequenceFlow id="sid-2f6f2420-2d78-4204-b4d1-20ff5598a5d9" sourceRef="sid-db33405e-455c-438f-9703-cb9f6f7e7de0" targetRef="sid-819c1d08-2bd9-4179-b5d0-7794f53d6a9b"/>
-    <userTask id="sid-1a0cac59-9b7f-46f8-8828-f910a506531c" name="财务审批"/>
+    <userTask id="sid-1a0cac59-9b7f-46f8-8828-f910a506531c" name="财务审批" activiti:assignee="rose"/>
     <sequenceFlow id="sid-a54323f1-8099-4eb5-bae3-20841708e6bf" sourceRef="sid-819c1d08-2bd9-4179-b5d0-7794f53d6a9b" targetRef="sid-1a0cac59-9b7f-46f8-8828-f910a506531c"/>
     <endEvent id="sid-a4470b22-7d10-45aa-a868-8a4e0f29c914"/>
     <sequenceFlow id="sid-9744c24d-6d8c-4947-8f89-db8557d05709" sourceRef="sid-1a0cac59-9b7f-46f8-8828-f910a506531c" targetRef="sid-a4470b22-7d10-45aa-a868-8a4e0f29c914"/>
   </process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_evection">
-    <bpmndi:BPMNPlane bpmnElement="evection" id="BPMNPlane_evection">
+    <bpmndi:BPMNPlane bpmnElement="applyEvection" id="BPMNPlane_evection">
       <bpmndi:BPMNShape id="shape-637b8168-5e16-498d-bf4c-8919c52a554b" bpmnElement="sid-49a82fbe-5299-4698-9030-a20e59e9f074">
         <omgdc:Bounds x="-50.0" y="-230.0" width="30.0" height="30.0"/>
       </bpmndi:BPMNShape>

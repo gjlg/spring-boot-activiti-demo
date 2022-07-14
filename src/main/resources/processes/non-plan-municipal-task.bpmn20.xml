@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/processdef">
+  <process id="non-plan-municipal-task" name="非计划性市级任务" isExecutable="true">
+    <startEvent id="sid-29472884-936d-479e-a31d-ff72b335e74b"/>
+    <userTask id="sid-df31ce2c-b87e-4a61-a969-b1168c097c6f" name="支队长创建任务并指派大队" activiti:assignee="${assignee0}"/>
+    <sequenceFlow id="sid-80463f69-ee5b-4fb9-9563-627a0d1e569a" sourceRef="sid-29472884-936d-479e-a31d-ff72b335e74b" targetRef="sid-df31ce2c-b87e-4a61-a969-b1168c097c6f"/>
+    <userTask id="sid-67f98485-99a3-4f20-ba6a-2997fd936593" name="大队长指派中队" activiti:assignee="${assignee1}" activiti:candidateGroups="大队"/>
+    <sequenceFlow id="sid-5796de6d-98ed-4036-a8df-fc0b165532cf" sourceRef="sid-df31ce2c-b87e-4a61-a969-b1168c097c6f" targetRef="sid-67f98485-99a3-4f20-ba6a-2997fd936593"/>
+    <exclusiveGateway id="sid-769d7f7b-6c3e-4eef-8f8e-5d64b7556209"/>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_non-plan-municipal-task">
+    <bpmndi:BPMNPlane bpmnElement="non-plan-municipal-task" id="BPMNPlane_non-plan-municipal-task">
+      <bpmndi:BPMNShape id="shape-4d97f3c2-c2ab-498c-bf31-090db9c0ca7e" bpmnElement="sid-29472884-936d-479e-a31d-ff72b335e74b">
+        <omgdc:Bounds x="-155.00002" y="-230.0" width="30.0" height="30.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape-50f407de-8d17-46ec-8554-4ae321fa2e04" bpmnElement="sid-df31ce2c-b87e-4a61-a969-b1168c097c6f">
+        <omgdc:Bounds x="-197.50002" y="-165.0" width="115.0" height="115.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="edge-a835d196-f336-4bc0-9c41-96dbf5610f95" bpmnElement="sid-80463f69-ee5b-4fb9-9563-627a0d1e569a">
+        <omgdi:waypoint x="-140.00002" y="-200.0"/>
+        <omgdi:waypoint x="-140.00002" y="-165.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="sid-0d21cfbb-9814-43ff-a666-26482ddd8e1b" bpmnElement="sid-67f98485-99a3-4f20-ba6a-2997fd936593">
+        <omgdc:Bounds x="-197.50003" y="-11.181549" width="115.0" height="115.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="edge-f0df3c0c-f641-477d-bef7-e4fee5013a34" bpmnElement="sid-5796de6d-98ed-4036-a8df-fc0b165532cf">
+        <omgdi:waypoint x="-140.00002" y="-50.0"/>
+        <omgdi:waypoint x="-140.00003" y="-11.181549"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="shape-fbb86a4d-f937-45a8-ae6d-83d8b2d66edc" bpmnElement="sid-769d7f7b-6c3e-4eef-8f8e-5d64b7556209">
+        <omgdc:Bounds x="-155.0" y="140.0" width="40.0" height="40.0"/>
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
